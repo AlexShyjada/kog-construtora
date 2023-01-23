@@ -1,7 +1,7 @@
-import React from 'react'
+import { StyledProduct } from "./styles";
 
 export function Product() {
   return (
-    <div>index</div>
+    <StyledProduct>index</StyledProduct>
   )
 }

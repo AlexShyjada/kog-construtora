@@ -1,7 +1,7 @@
-import React from 'react'
+import { StyledPortfolio } from './styles'
 
 export function Portfolio() {
   return (
-    <div>index</div>
+    <StyledPortfolio>index</StyledPortfolio>
   )
 }

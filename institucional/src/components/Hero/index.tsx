@@ -1,7 +1,7 @@
-import React from 'react'
+import { StyledHero } from "./styles";
 
 export function Hero() {
   return (
-    <div>index</div>
+    <StyledHero>index</StyledHero>
   )
 }
