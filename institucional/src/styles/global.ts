@@ -21,7 +21,7 @@ export const globalStyles = globalCss({
   },
 
   '::-webkit-scrollbar, ::-webkit-scrollbar-track': {
-    background: '$base4'
+    background: '$base1'
   },
   
   '::-webkit-scrollbar-thumb': {

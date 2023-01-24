@@ -21,19 +21,18 @@ export const {
       base3: 'rgba(236, 236, 236, 1)',
       base2: 'rgba(243, 243, 243, 1)',
       base1: 'rgba(251, 251, 251, 1)',
-
-      //Red
-      redDark: 'rgba(226, 54, 69, 1)',
-
-      //Yellow
-      yellowDark: 'rgba(237, 181, 7, 1)',
-
-      //Green
-      greenDark: 'rgba(0, 143, 102, 1)',
     },
 
     fonts: {
-      mainFont: '"sora", sans-serif',
-    }
+      mainFont: '"montserrat", sans-serif',
+    },
+
+    media: {
+      bp1: '(max-width: 1300px)',
+      bp2: '(max-width: 1024px)',
+      bp3: '(max-width: 900px)',
+      bp4: '(max-width: 720px)',
+      bp5: '(max-width: 600px)',
+    },
   }
 })
