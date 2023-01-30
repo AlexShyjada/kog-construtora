@@ -39,6 +39,7 @@ export const StyledContact = styled.section`
         display: flex;
         gap: 24px;
         align-items: center;
+        margin-bottom: 12px;
       }
     }
   

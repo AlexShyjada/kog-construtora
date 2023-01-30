@@ -6,6 +6,7 @@ export const StyledHeader = styled.header`
   background: var(--base1);
   height: 72px;
 
+  z-index: 999;
   position: fixed;
   inset: 0 0 auto 0;
 `

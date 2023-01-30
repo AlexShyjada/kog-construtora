@@ -70,6 +70,20 @@ export const GlobalStyles = styled.createGlobalStyle`
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
   }
+  
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 0;
+    scrollbar-width: 6px;
+  }
+
+  ::-webkit-scrollbar, ::-webkit-scrollbar-track {
+    background: (--border);
+  };
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--brandColor)
+  }
 
   a:not([class]) {
     text-decoration-skip-ink: auto;
