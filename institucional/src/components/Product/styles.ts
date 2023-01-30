@@ -1,82 +1,84 @@
-import { styled } from "../../styles/index";
+import styled from 'styled-components'
 
-export const StyledProduct = styled("section", {
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  padding: "60px",
-});
+export const StyledProduct = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+`
 
-export const Container = styled("div", {
-  width: "100%",
-  maxWidth: "1223px",
-  display: "flex",
-  flexDirection: "column",
-  gap: "40px",
-});
+export const Container = styled.div`
+  width: 100%;
+  max-width: 1223px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+`
 
-export const StyledTitleContainer = styled("div", {
-  display: "flex",
-  justifyContent: "space-between",
+export const StyledTitleContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 
-  "div.titleContent": {
-    display: "flex",
-    flexDirection: "column",
+  div.titleContent {
+    display: flex;
+    flex-direction: column;
 
-    span: {
-      fontWeight: "500",
-      fontSize: "14px",
-      lineHeight: "17px",
-      letterSpacing: "1px",
-      textTransform: "uppercase",
-    },
+    span {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    };
 
-    h2: {
-      fontWeight: "700",
-      fontSize: "48px",
-      lineHeight: "59px",
-    },
-  },
+    h2 {
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 59px;
+    };
+  };
 
-  button: {
-    height: "48px",
-    display: "flex",
-    alignItems: "center",
-    gap: "8px",
-    padding: "0 32px",
-    color: "$base1",
-    background: "$brandColor",
+  button {
+    margin-bottom: 12px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 32px;
+    color: var(--base1);
+    background: var(--brandColor);
 
-    "&:hover": {
+    &:hover {
       background: "$brandColorHover",
-    },
-  },
-});
+    };
+  };
+`
 
-export const StyledServicesContainer = styled("div", {
-  display: "grid",
-  gap: "20px",
-  gridTemplateColumns: "repeat(3, 1fr)",
-});
+export const StyledServicesContainer = styled.div`
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+`
 
-export const StyledCard = styled("div", {
-  display: "flex",
-  flexDirection: "column",
-  padding: "24px",
-  gap: "12px",
-  background: "$base3",
+export const StyledCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 12px;
+  background: var(--base3);
 
-  "h3.productTitle": {
-    fontWeight: "700",
-    fontSize: "28px",
-    lineHeight: "41px",
-    letterSpacing: "0.25px",
-  },
+  h3.productTitle{
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 41px;
+    letter-spacing: 0.25px;
+  };
 
-  "span.productDescription": {
-    height: "100px",
-    fontSize: "18px",
-    lineHeight: "26px",
-    letterSpacing: "0.15px",
-  },
-});
+  span.productDescription {
+    height: 100px;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 0.15px;
+  };
+`
