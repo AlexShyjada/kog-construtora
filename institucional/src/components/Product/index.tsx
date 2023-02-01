@@ -11,12 +11,12 @@ import Image from "next/image";
 
 export function Product() {
   return (
-    <StyledProduct>
+    <StyledProduct id="Servicos">
       <Container>
         <StyledTitleContainer>
           <div className="titleContent">
             <span>O que podemos fazer por você?</span>
-            <h2>Carta de Serviços</h2>
+            <h2>Áreas de Atuação</h2>
           </div>
           <button>
             Solicitar Orçamento
@@ -26,7 +26,7 @@ export function Product() {
 
         <StyledServicesContainer>
           {ProductList.map((product) => (
-            <StyledCard key={product.id}>
+            <StyledCard key={product.id} className={`card${product.id+1}`}>
               <Image
                 src={product.imgURL}
                 width={60}

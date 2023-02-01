@@ -1,6 +1,7 @@
 import { Container, StyledHero } from "./styles";
 
 export function Hero() {
+
   return (
     <StyledHero id="Inicio">
       <Container>

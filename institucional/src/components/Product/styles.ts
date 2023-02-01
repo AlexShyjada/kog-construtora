@@ -1,11 +1,15 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const StyledProduct = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px;
-`
+  padding: 60px 10px;
+
+  @media (max-width: 420px) {
+    padding: 24px 10px;
+  }
+`;
 
 export const Container = styled.div`
   width: 100%;
@@ -13,7 +17,11 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
-`
+
+  @media (max-width: 940px) {
+    gap: 24px;
+  }
+`;
 
 export const StyledTitleContainer = styled.div`
   display: flex;
@@ -30,14 +38,14 @@ export const StyledTitleContainer = styled.div`
       line-height: 17px;
       letter-spacing: 1px;
       text-transform: uppercase;
-    };
+    }
 
     h2 {
       font-weight: 700;
       font-size: 48px;
       line-height: 59px;
-    };
-  };
+    }
+  }
 
   button {
     margin-bottom: 12px;
@@ -50,16 +58,75 @@ export const StyledTitleContainer = styled.div`
     background: var(--brandColor);
 
     &:hover {
-      background: "$brandColorHover",
-    };
-  };
-`
+      background: "$brandColorHover";
+    }
+  }
+
+  @media (max-width: 900px) {
+    button {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+    div.titleContent {
+      gap: 8px;
+      h2{
+        font-size: 40px;
+        line-height: 49px;
+      }
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+  @media (max-width: 420px) {
+    div.titleContent {
+      gap: 4px;
+      h2{
+        font-size: 24px;
+        line-height: 29px;
+      }
+      span {
+        font-size: 10px;
+      }
+    }
+  }
+`;
 
 export const StyledServicesContainer = styled.div`
   display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(3, 1fr);
-`
+  gap: 16px;
+
+  .card1 {
+    grid-area: card1;
+    min-width: 100%;
+    width: 100%;
+  }
+  .card2 {
+    grid-area: card2;
+    min-width: 100%;
+  }
+  .card3 {
+    grid-area: card3;
+    min-width: 100%;
+    width: 100%;
+  }
+  grid-template-areas: "card1 card2 card3";
+
+  @media (max-width: 1085px) {
+    grid-template-areas:
+      "card1 card2"
+      "card3 card3";
+  }
+
+  @media (max-width: 720px) {
+    gap: 8px;
+    grid-template-areas:
+      "card1"
+      "card2"
+      "card3";
+  }
+`;
 
 export const StyledCard = styled.div`
   display: flex;
@@ -68,17 +135,42 @@ export const StyledCard = styled.div`
   gap: 12px;
   background: var(--base3);
 
-  h3.productTitle{
+  h3.productTitle {
     font-weight: 700;
     font-size: 28px;
     line-height: 41px;
     letter-spacing: 0.25px;
-  };
+  }
 
   span.productDescription {
     height: 100px;
+    font-weight: 500;
     font-size: 18px;
     line-height: 26px;
     letter-spacing: 0.15px;
-  };
-`
+  }
+  @media (max-width: 940px) {
+    gap: 8px;
+    padding: 16px;
+
+    img {
+      height: 42px;
+      width: 32px;
+    }
+
+    h3.productTitle {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    span.productDescription {
+      height: fit-content;
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    gap: 4px;
+  }
+`;

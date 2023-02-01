@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const StyledContact = styled.section`
+  padding: 60px 10px;
   display: flex;
   justify-content: center;
-  
+
   .container {
     display: flex;
     flex-direction: column;
@@ -11,9 +12,7 @@ export const StyledContact = styled.section`
 
     .contactHeader {
       display: flex;
-      gap: 40px;
       justify-content: space-between;
-  
       .titleContainer {
         display: flex;
         flex-direction: column;
@@ -34,20 +33,17 @@ export const StyledContact = styled.section`
           color: var(--brandColor);
         }
       }
-  
       .buttonContainer {
         display: flex;
         gap: 24px;
         align-items: center;
-        margin-bottom: 12px;
       }
     }
-  
+
     .gridCards {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
-  
       .card {
         display: flex;
         flex-direction: column;
@@ -56,12 +52,12 @@ export const StyledContact = styled.section`
         padding: 24px 16px;
         gap: 24px;
         border: solid 1px var(--border);
-  
+
         .cardTextContainer {
           display: flex;
           flex-direction: column;
           gap: 6px;
-  
+
           .tertiaryText {
             font-weight: 700;
             font-size: 24px;
@@ -78,27 +74,86 @@ export const StyledContact = styled.section`
       }
     }
   }
+
+  @media (max-width: 940px) {
+    flex-direction: column;
+    gap: 16px;
+    .container {
+      gap: 24px;
+      .contactHeader {
+        .buttonContainer {
+          display: none;
+        }
+      }
+
+      .gridCards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
+  @media (max-width: 660px) {
+    gap: 16px;
+    .container {
+      .contactHeader {
+      }
+      .gridCards {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        .card {
+          gap: 8px;
+          padding: 16px;
+          svg {
+            height: 20px;
+            width: 20px;
+          }
+          .cardTextContainer {
+            gap: 4px;
+            .tertiaryText {
+              font-size: 16px;
+              line-height: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 420px) {
+    padding: 24px 10px;
+    .container {
+      .contactHeader {
+        .titleContainer {
+          h2.titleSecundary {
+            font-size: 28px;
+            line-height: 34px;
+          }
+          span.titleSpan {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
 `;
 
 export const StyledInstagram = styled.a`
   display: flex;
   gap: 8px;
   align-items: center;
-  padding: 16px 24px;
+  padding: 12px 24px;
   color: var(--brandColor);
   border: 1px solid var(--brandColor);
-  `
+`;
 export const StyledWhatsapp = styled.a`
   display: flex;
   gap: 8px;
   align-items: center;
-  padding: 16px 24px;
+  padding: 12px 24px;
   color: var(--base1);
   background: var(--brandColor);
   border: 1px solid var(--brandColor);
-`
-
-
+`;
 
 export const Container = styled.div`
   width: 100%;
