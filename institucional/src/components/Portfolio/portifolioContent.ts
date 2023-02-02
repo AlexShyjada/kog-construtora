@@ -13,7 +13,7 @@ interface iPortifolioContentProps {
 export const portifolioContent = [
   {
     id: 1,
-    title: "Projeto 1",
+    title: "Projeto 1 - saude",
     description:
       "Lorem ipsum dolor sit amet consectetur. Sed justo in maecenas elementum dignissim. Ultrices non duis velit tempus felis. Volutpat cursus varius tellus nisl commodo augue elit malesuada.",
       projectType: 'saude',
@@ -42,7 +42,7 @@ export const portifolioContent = [
   },
   {
     id: 2,
-    title: "Projeto 2",
+    title: "Projeto 2 - saude",
     description:
       "Lorem ipsum dolor sit amet consectetur. Sed justo in maecenas elementum dignissim. Ultrices non duis velit tempus felis. Volutpat cursus varius tellus nisl commodo augue elit malesuada.",
       projectType: 'saude',
@@ -71,7 +71,7 @@ export const portifolioContent = [
   },
   {
     id: 3,
-    title: "Projeto 3",
+    title: "Projeto 3 - comercial",
     description:
       "Lorem ipsum dolor sit amet consectetur. Sed justo in maecenas elementum dignissim. Ultrices non duis velit tempus felis. Volutpat cursus varius tellus nisl commodo augue elit malesuada.",
       projectType: 'comercial',
@@ -100,7 +100,7 @@ export const portifolioContent = [
   },
   {
     id: 4,
-    title: "Projeto 4",
+    title: "Projeto 4 - comercial",
     description:
       "Lorem ipsum dolor sit amet consectetur. Sed justo in maecenas elementum dignissim. Ultrices non duis velit tempus felis. Volutpat cursus varius tellus nisl commodo augue elit malesuada.",
       projectType: 'comercial',
@@ -129,7 +129,7 @@ export const portifolioContent = [
   },
   {
     id: 5,
-    title: "Projeto 5",
+    title: "Projeto 5 - residencial",
     description:
       "Lorem ipsum dolor sit amet consectetur. Sed justo in maecenas elementum dignissim. Ultrices non duis velit tempus felis. Volutpat cursus varius tellus nisl commodo augue elit malesuada.",
       projectType: 'residencial',
@@ -158,7 +158,7 @@ export const portifolioContent = [
   },
   {
     id: 6,
-    title: "Projeto 6",
+    title: "Projeto 6 - residencial",
     description:
       "Lorem ipsum dolor sit amet consectetur. Sed justo in maecenas elementum dignissim. Ultrices non duis velit tempus felis. Volutpat cursus varius tellus nisl commodo augue elit malesuada.",
       projectType: 'residencial',

@@ -6,6 +6,21 @@ import { useState } from "react";
 export function Portfolio() {
   const [selectedFilter, setSelectedFilter] = useState("all");
 
+  const portfolioArray =
+    selectedFilter === "residencial"
+      ? portifolioContent.filter(
+          (portfolioItem) => portfolioItem.projectType === "residencial"
+        )
+      : selectedFilter === "saude"
+      ? portifolioContent.filter(
+          (portfolioItem) => portfolioItem.projectType === "saude"
+        )
+      : selectedFilter === "comercial"
+      ? portifolioContent.filter(
+          (portfolioItem) => portfolioItem.projectType === "comercial"
+        )
+      : portifolioContent;
+
   return (
     <StyledPortfolio id="Portfolio">
       <Container>
@@ -19,28 +34,28 @@ export function Portfolio() {
           <div className="buttonContainer">
             <StyledButton
               isDisabled={selectedFilter === "all" ? false : true}
-              onClick={() => setSelectedFilter('all')}
+              onClick={() => setSelectedFilter("all")}
               className="filter1"
             >
               Todos os projetos
             </StyledButton>
             <StyledButton
               isDisabled={selectedFilter === "residencial" ? false : true}
-              onClick={() => setSelectedFilter('residencial')}
+              onClick={() => setSelectedFilter("residencial")}
               className="filter2"
             >
               Residencial
             </StyledButton>
             <StyledButton
               isDisabled={selectedFilter === "saude" ? false : true}
-              onClick={() => setSelectedFilter('saude')}
+              onClick={() => setSelectedFilter("saude")}
               className="filter3"
             >
               Saúde
             </StyledButton>
             <StyledButton
               isDisabled={selectedFilter === "comercial" ? false : true}
-              onClick={() => setSelectedFilter('comercial')}
+              onClick={() => setSelectedFilter("comercial")}
               className="filter4"
             >
               Comercial
@@ -49,21 +64,23 @@ export function Portfolio() {
         </header>
 
         <div className="gridCardsPortfólios">
-          {portifolioContent.map((card) => (
-            <div key={card.id} className="portifolioCard">
-              <figure className="figure">
-                <Image alt={card.title} src={card.imgList[0].url} fill />
-              </figure>
+          {portfolioArray.map((card) => (
+              <div key={card.id} className="portifolioCard">
+                <figure className="figure">
+                  <Image alt={card.title} src={card.imgList[0].url} fill />
+                </figure>
 
-              <div className="contentContainer">
-                <div className="textContainer">
-                  <h3> {card.title} </h3>
-                  <p className="portfolioCardDescription">{card.description}</p>
+                <div className="contentContainer">
+                  <div className="textContainer">
+                    <h3> {card.title} </h3>
+                    <p className="portfolioCardDescription">
+                      {card.description}
+                    </p>
+                  </div>
+                  <a>Saiba mais</a>
                 </div>
-                <a>Saiba mais</a>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </Container>
     </StyledPortfolio>

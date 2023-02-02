@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledContact = styled.section`
-  padding: 60px 10px;
+  padding: 60px 0;
   display: flex;
   justify-content: center;
 
@@ -9,6 +9,7 @@ export const StyledContact = styled.section`
     display: flex;
     flex-direction: column;
     gap: 40px;
+    padding: 10px;
 
     .contactHeader {
       display: flex;

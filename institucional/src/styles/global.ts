@@ -5,7 +5,7 @@ const styled = { createGlobalStyle };
 export const GlobalStyles = styled.createGlobalStyle`
   :root {
     --brandColor: #08181b;
-    --brandColorDark: #031316;
+    --brandColorDark: #020B0D;
     --base1: #fbfbfb;
     --base2: #f3f3f3;
     --base3: #ececec;
