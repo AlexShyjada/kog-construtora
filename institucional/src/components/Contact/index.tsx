@@ -3,7 +3,6 @@ import {
   EnvelopeSimple,
   InstagramLogo,
   MapPinLine,
-  Phone,
   WhatsappLogo,
 } from "phosphor-react";
 import {
@@ -15,7 +14,7 @@ import {
 
 export function Contact() {
   return (
-    <StyledContact>
+    <StyledContact id="Contato">
       <Container className="container">
         <header className="contactHeader">
           <div className="titleContainer">
@@ -33,14 +32,14 @@ export function Contact() {
         </header>
 
         <div className="gridCards">
-          <div className="card .whatsApp">
+          <div className="card whatsApp">
             <WhatsappLogo size={32} />
             <div className="cardTextContainer">
               <h3 className="tertiaryText">WhastsApp</h3>
               <span className="contactDescription">(071) 91234-1234</span>
             </div>
           </div>
-          <div className="card .Instagram">
+          <div className="card instagram">
           <InstagramLogo size={32} />
             <div className="cardTextContainer">
               <h3 className="tertiaryText">Instagram</h3>

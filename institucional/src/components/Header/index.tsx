@@ -12,7 +12,7 @@ import {
 } from "./styles";
 
 export function Header() {
-  const [isHeaderMobileActive, setIsHeaderMobileActive] = useState(true);
+  const [isHeaderMobileActive, setIsHeaderMobileActive] = useState(false);
 
   return (
     <>
@@ -25,19 +25,19 @@ export function Header() {
             alt="Logo KOG Construtora"
           />
           <StyledNav>
-            <Link href="Hero" legacyBehavior>
+            <Link href="#Inicio" legacyBehavior>
               <a>Inicio</a>
             </Link>
-            <Link href="Servicos" legacyBehavior>
+            <Link href="#Servicos" legacyBehavior>
               <a>Áreas de atuação</a>
             </Link>
-            <Link href="Portfolio" legacyBehavior>
+            <Link href="#Portfolio" legacyBehavior>
               <a>Portfólio</a>
             </Link>
-            <Link href="SobreNos" legacyBehavior>
+            <Link href="#SobreNos" legacyBehavior>
               <a>Sobre nós</a>
             </Link>
-            <Link href="Contato" legacyBehavior>
+            <Link href="#Contato" legacyBehavior>
               <a>Contato</a>
             </Link>
           </StyledNav>
@@ -79,7 +79,7 @@ export function Header() {
       </StyledHeaderMobile>
       
       <StyledNavMobile isHeaderMobileActive={isHeaderMobileActive}>
-        <Link href="#Hero" legacyBehavior>
+        <Link href="#Inicio" legacyBehavior>
           <a onClick={() => setIsHeaderMobileActive(!isHeaderMobileActive)}>
             Inicio
           </a>

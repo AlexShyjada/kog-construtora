@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const StyledPortfolio = styled.section`
   display: flex;
@@ -7,9 +7,14 @@ export const StyledPortfolio = styled.section`
   .contactHeader {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
     gap: 40px;
 
     .titleContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
       .titleSpan {
         font-weight: 500;
         font-size: 14px;
@@ -24,11 +29,69 @@ export const StyledPortfolio = styled.section`
         line-height: 59px;
         color: var(--brandColor);
       }
+
+      @media (max-width: 900px) {
+        .titleSecundary {
+          font-size: 40px;
+          line-height: 49px;
+        }
+        .titleSpan {
+          font-size: 12px;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .titleSecundary {
+          font-size: 24px;
+          line-height: 29px;
+        }
+        .titleSpan {
+          font-size: 10px;
+        }
+      }
     }
 
     .buttonContainer {
+      margin-bottom: 12px;
       display: flex;
+      gap: 1px;
       align-items: center;
+      height: fit-content;
+    }
+
+    @media (max-width: 900px) {
+      gap: 16px;
+
+      .titleContainer {
+        width: 100%;
+      }
+
+      .buttonContainer {
+        width: 100%;
+        display: grid;
+        grid-template-areas:
+          "filter1 filter2"
+          "filter3 filter4";
+
+        margin-bottom: 10px;
+
+        .filter1 {
+          grid-area: filter1;
+        }
+        .filter2 {
+          grid-area: filter2;
+        }
+        .filter3 {
+          grid-area: filter3;
+        }
+        .filter4 {
+          grid-area: filter4;
+        }
+      }
+    }
+
+    @media (max-width: 720px) {
+      flex-direction: column;
     }
   }
 
@@ -51,6 +114,10 @@ export const StyledPortfolio = styled.section`
         height: 330px;
         img {
           object-fit: cover;
+        }
+
+        @media (max-width: 600px) {
+          height: 280px;
         }
       }
 
@@ -102,16 +169,27 @@ export const StyledPortfolio = styled.section`
         }
       }
     }
+
+    @media (max-width: 720px) {
+      grid-template-columns: 1fr;
+    }
   }
 `;
 
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: 1223px;
-  padding: 20px 0;
+  padding: 20px 10px;
+  gap: 40px;
 `;
 
-export const StyledButton = styled.button`
+interface IStyledButton {
+  isDisabled: boolean;
+}
+
+export const StyledButton = styled.button<IStyledButton>`
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
@@ -120,4 +198,13 @@ export const StyledButton = styled.button`
   padding: 8px 16px;
   color: var(--base1);
   opacity: 1;
+
+  ${(props) =>
+    props.isDisabled
+      ? css`
+          opacity: 0.3;
+          `
+      : css`
+          opacity: 1;
+        `}
 `;

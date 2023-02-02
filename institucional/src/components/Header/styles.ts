@@ -111,6 +111,7 @@ export const StyledNavMobile = styled.nav<iStyledNavMobileProps>`
   inset: 50px 0 auto 0;
   width: 100vw;
   position: fixed;
+  z-index: 999;
 
   background: var(--base2);
   flex-direction: column;

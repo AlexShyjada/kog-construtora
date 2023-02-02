@@ -44,6 +44,15 @@ export const StyledContact = styled.section`
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
+
+      .card.whatsApp,
+      .card.instagram {
+        display: none;
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
       .card {
         display: flex;
         flex-direction: column;
@@ -100,6 +109,15 @@ export const StyledContact = styled.section`
       .gridCards {
         grid-template-columns: 1fr;
         gap: 12px;
+
+        .card.whatsApp,
+        .card.instagram {
+          opacity: 1;
+          width: 100%;
+          height: fit-content;
+          display: flex;
+        }
+
         .card {
           gap: 8px;
           padding: 16px;

@@ -9,6 +9,7 @@ export const StyledFooter = styled.footer`
   `;
 
 export const Container = styled.div`
+  padding: 0 10px;
   width: 100%;
   max-width: 1223px;
   display: flex;

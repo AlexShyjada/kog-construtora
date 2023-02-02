@@ -6,7 +6,7 @@ export const StyledProduct = styled.section`
   align-items: center;
   padding: 60px 10px;
 
-  @media (max-width: 420px) {
+  @media (max-width: 720px) {
     padding: 24px 10px;
   }
 `;
@@ -31,6 +31,7 @@ export const StyledTitleContainer = styled.div`
   div.titleContent {
     display: flex;
     flex-direction: column;
+    gap: 8px;
 
     span {
       font-weight: 500;
