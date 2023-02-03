@@ -181,7 +181,7 @@ export const Container = styled.div`
   flex-direction: column;
   width: 100%;
   max-width: 1223px;
-  padding: 20px 10px;
+  padding: 65px 10px 0 10px;
   gap: 40px;
 `;
 

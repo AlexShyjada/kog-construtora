@@ -1,15 +1,14 @@
 import styled from "styled-components";
 
 export const StyledContact = styled.section`
-  padding: 60px 0;
   display: flex;
   justify-content: center;
-
+  
   .container {
+    padding: 65px 10px;
     display: flex;
     flex-direction: column;
     gap: 40px;
-    padding: 10px;
 
     .contactHeader {
       display: flex;
@@ -177,5 +176,4 @@ export const StyledWhatsapp = styled.a`
 export const Container = styled.div`
   width: 100%;
   max-width: 1223px;
-  padding: 20px 0;
 `;

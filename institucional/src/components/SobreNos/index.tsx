@@ -5,7 +5,7 @@ import { StyledSobreNos } from "./styled";
 
 export function SobreNos() {
   return (
-    <StyledSobreNos>
+    <StyledSobreNos id="SobreNos">
       <div className="container">
         <div className="textContainer">
           <article className="mainContent">
@@ -13,6 +13,7 @@ export function SobreNos() {
               <span className="subtitle">Sobre nós</span>
               <h2 className="secundaryTitle">Um pouco sobre a KOG</h2>
             </header>
+
             <div className="paragrathContainer">
               <p className="paragrath">
                 A KOG Construtora é especialista em obras de alto padrão,

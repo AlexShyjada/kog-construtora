@@ -5,3 +5,4 @@ export * from './Portfolio';
 export * from './SobreNos';
 export * from './Contact';
 export * from './Footer';
+export * from './Modal';

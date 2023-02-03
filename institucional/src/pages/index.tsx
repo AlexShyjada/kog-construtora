@@ -1,15 +1,24 @@
-import { Contact, Footer, Header, Hero, SobreNos, Portfolio, Product } from '@/components'
+import {
+  Contact,
+  Footer,
+  Header,
+  Hero,
+  SobreNos,
+  Portfolio,
+  Product,
+  ModalPortfolio,
+} from "@/components";
 
 export default function Home() {
   return (
     <>
-      <Header/>
-      <Hero/>
-      <Product/>
-      <Portfolio/>
-      {/* <SobreNos/> */}
-      <Contact/>
-      <Footer/>
+      <Header />
+      <Hero />
+      <Product />
+      <Portfolio />
+      <SobreNos />
+      <Contact />
+      <Footer />
     </>
-  )
+  );
 }

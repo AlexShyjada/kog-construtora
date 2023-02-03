@@ -4,14 +4,14 @@ export const StyledProduct = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px 10px;
-
+  
   @media (max-width: 720px) {
     padding: 24px 10px;
   }
-`;
+  `;
 
 export const Container = styled.div`
+  padding: 65px 10px 0 10px;
   width: 100%;
   max-width: 1223px;
   display: flex;

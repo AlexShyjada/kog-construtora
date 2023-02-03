@@ -6,11 +6,11 @@ export const StyledSobreNos = styled.section`
   align-items: center;
 
   .container {
+    padding: 65px 10px;
     display: flex;
     gap: 20px;
     max-width: 1224px;
     width: 100%;
-    padding: 60px 10px;
 
     .textContainer {
       display: flex;
@@ -108,6 +108,10 @@ export const StyledSobreNos = styled.section`
       img {
         object-fit: cover;
       }
+    }
+
+    @media(max-width: 1223px) {
+      
     }
   }
 `;

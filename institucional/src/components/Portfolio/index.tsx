@@ -2,6 +2,8 @@ import Image from "next/image";
 import { portifolioContent } from "./portifolioContent";
 import { Container, StyledButton, StyledPortfolio } from "./styles";
 import { useState } from "react";
+import { ModalPortfolio } from "../Modal";
+import { PortfolioCard } from "./portfolioCard";
 
 export function Portfolio() {
   const [selectedFilter, setSelectedFilter] = useState("all");
@@ -65,22 +67,13 @@ export function Portfolio() {
 
         <div className="gridCardsPortfólios">
           {portfolioArray.map((card) => (
-              <div key={card.id} className="portifolioCard">
-                <figure className="figure">
-                  <Image alt={card.title} src={card.imgList[0].url} fill />
-                </figure>
-
-                <div className="contentContainer">
-                  <div className="textContainer">
-                    <h3> {card.title} </h3>
-                    <p className="portfolioCardDescription">
-                      {card.description}
-                    </p>
-                  </div>
-                  <a>Saiba mais</a>
-                </div>
-              </div>
-            ))}
+            <PortfolioCard
+              title={card.title}
+              key={card.id}
+              description={card.description}
+              imgList={card.imgList}
+            />
+          ))}
         </div>
       </Container>
     </StyledPortfolio>
