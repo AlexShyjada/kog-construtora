@@ -25,6 +25,7 @@ export function ModalPortfolio(props: IModalPortfolio) {
     <StyledModal>
       <div className="container">
         <button
+          id="Top"
           onClick={() => setIsModalActive(!isModalActive)}
           className="closeModal"
         >
@@ -38,13 +39,14 @@ export function ModalPortfolio(props: IModalPortfolio) {
           </header>
 
           <div className="imageContainer">
-            <figure className="mainFigure">
+            <figure id="MainFigure" className="mainFigure">
               <Image fill alt="" src={whatImageIsActive} />
             </figure>
 
             <div className="gridImages">
               {imgList.map((image) => (
                 <StyledImageItem
+                  href="#Top"
                   className="imageItem"
                   key={image.id}
                   onClick={() => setWhatImageIsActive(image.url)}

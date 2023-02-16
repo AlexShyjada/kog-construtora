@@ -143,13 +143,7 @@ export const StyledPortfolio = styled.section`
           }
 
           .portfolioCardDescription {
-            height: 70px;
-            -webkit-box-orient: vertical;
-            display: -webkit-box;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            -webkit-line-clamp: 2;
-
+            height: 32px;
             font-weight: 400;
             font-size: 18px;
             line-height: 32px;
@@ -160,6 +154,7 @@ export const StyledPortfolio = styled.section`
         }
 
         a {
+          cursor: pointer;
           font-weight: 700;
           font-size: 16px;
           line-height: 20px;

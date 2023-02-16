@@ -93,15 +93,16 @@ interface IStyledModal {
   isImageActive: boolean;
 }
 
-export const StyledImageItem = styled.figure<IStyledModal>`
+export const StyledImageItem = styled.a<IStyledModal>`
   position: relative;
   width: 100%;
   height: 100px;
+  border: solid 2px var(--border);
 
   ${(props) =>
     props.isImageActive
       ? css`
-          border: solid 2px #f7326e;
+          border: solid 2px var(--brandColor);
         `
       : ""}
 

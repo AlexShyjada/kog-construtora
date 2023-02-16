@@ -1,27 +1,24 @@
-import Image from "next/image";
-import { portifolioContent } from "./portifolioContent";
+import { portifolioMockedContent } from "./portifolioMockedContent";
 import { Container, StyledButton, StyledPortfolio } from "./styles";
 import { useState } from "react";
-import { ModalPortfolio } from "../Modal";
 import { PortfolioCard } from "./portfolioCard";
 
 export function Portfolio() {
-  const [selectedFilter, setSelectedFilter] = useState("all");
+  const [selectedFilter, setSelectedFilter] = useState("allMockedContent");
+  const [filteredPortfolio, setFilteredPortfolio] = useState(
+    portifolioMockedContent
+  );
 
-  const portfolioArray =
-    selectedFilter === "residencial"
-      ? portifolioContent.filter(
-          (portfolioItem) => portfolioItem.projectType === "residencial"
+  function filterArray(filter: string) {
+    setSelectedFilter(filter);
+    filter !== "allMockedContent"
+      ? setFilteredPortfolio(
+          portifolioMockedContent.filter(
+            (portfolioItem) => portfolioItem.projectType === filter
+          )
         )
-      : selectedFilter === "saude"
-      ? portifolioContent.filter(
-          (portfolioItem) => portfolioItem.projectType === "saude"
-        )
-      : selectedFilter === "comercial"
-      ? portifolioContent.filter(
-          (portfolioItem) => portfolioItem.projectType === "comercial"
-        )
-      : portifolioContent;
+      : setFilteredPortfolio(portifolioMockedContent);
+  }
 
   return (
     <StyledPortfolio id="Portfolio">
@@ -35,29 +32,29 @@ export function Portfolio() {
           </div>
           <div className="buttonContainer">
             <StyledButton
-              isDisabled={selectedFilter === "all" ? false : true}
-              onClick={() => setSelectedFilter("all")}
+              isDisabled={selectedFilter === "allMockedContent" ? false : true}
+              onClick={() => filterArray("allMockedContent")}
               className="filter1"
             >
               Todos os projetos
             </StyledButton>
             <StyledButton
               isDisabled={selectedFilter === "residencial" ? false : true}
-              onClick={() => setSelectedFilter("residencial")}
+              onClick={() => filterArray("residencial")}
               className="filter2"
             >
               Residencial
             </StyledButton>
             <StyledButton
               isDisabled={selectedFilter === "saude" ? false : true}
-              onClick={() => setSelectedFilter("saude")}
+              onClick={() => filterArray("saude")}
               className="filter3"
             >
               Saúde
             </StyledButton>
             <StyledButton
               isDisabled={selectedFilter === "comercial" ? false : true}
-              onClick={() => setSelectedFilter("comercial")}
+              onClick={() => filterArray("comercial")}
               className="filter4"
             >
               Comercial
@@ -66,7 +63,7 @@ export function Portfolio() {
         </header>
 
         <div className="gridCardsPortfólios">
-          {portfolioArray.map((card) => (
+          {filteredPortfolio.map((card) => (
             <PortfolioCard
               title={card.title}
               key={card.id}
