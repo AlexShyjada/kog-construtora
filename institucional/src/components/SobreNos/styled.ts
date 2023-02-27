@@ -8,9 +8,16 @@ export const StyledSobreNos = styled.section`
   .container {
     padding: 65px 10px;
     display: flex;
-    gap: 20px;
+    gap: 40px;
     max-width: 1224px;
     width: 100%;
+
+    @media (max-width: 1200px) {
+      flex-direction: row-reverse;
+    }
+    @media (max-width: 800px) {
+      flex-direction: column-reverse;
+    }
 
     .textContainer {
       display: flex;
@@ -21,6 +28,9 @@ export const StyledSobreNos = styled.section`
         display: flex;
         flex-direction: column;
         gap: 20px;
+        @media (max-width: 400px) {
+          gap: 16px;
+        }
 
         .titleContainer {
           display: flex;
@@ -41,6 +51,26 @@ export const StyledSobreNos = styled.section`
             letter-spacing: 2.2px;
             text-transform: uppercase;
           }
+          @media (max-width: 1200px) {
+            gap: 0;
+            h2.secundaryTitle {
+              font-size: 40px;
+            }
+            span.subtitle {
+              font-size: 14px;
+            }
+          }
+
+          @media (max-width: 500px) {
+            h2.secundaryTitle {
+              font-size: 24px;
+              line-height: 29px;
+            }
+            span.subtitle {
+              font-size: 12px;
+              line-height: 16px;
+            }
+          }
         }
 
         .paragrathContainer {
@@ -52,6 +82,14 @@ export const StyledSobreNos = styled.section`
             font-size: 16px;
             line-height: 32px;
             letter-spacing: 0.2px;
+          }
+
+          @media (max-width: 1200px) {
+            gap: 20;
+            p.paragrath {
+              font-size: 14px;
+              line-height: 24px;
+            }
           }
         }
 
@@ -108,10 +146,47 @@ export const StyledSobreNos = styled.section`
       img {
         object-fit: cover;
       }
+      @media (max-width: 1200px) {
+        min-width: 440px;
+        max-width: 440px;
+        height: 290px;
+      }
+      
+      @media (max-width: 980px) {
+        min-width: 350px;
+        max-width: 300px;
+        height: 400px;
+      }
+
+      @media (max-width: 800px) {
+        width: 100%;
+        min-width: 100%;
+        max-height: 400px;
+        min-height: 400px;
+        img {
+          object-position: top;
+        }
+      }
+
+      @media (max-width: 600px) {
+        width: 100%;
+        min-width: 100%;
+        max-height: 350px;
+        min-height: 350px;
+      }
+
+      @media (max-width: 500px) {
+        width: 100%;
+        min-width: 100%;
+        max-height: 250px;
+        min-height: 250px;
+        img {
+          object-position: top;
+        }
+      }
     }
 
-    @media(max-width: 1223px) {
-      
+    @media (max-width: 1223px) {
     }
   }
 `;
