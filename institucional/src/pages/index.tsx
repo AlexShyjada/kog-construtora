@@ -6,19 +6,18 @@ import {
   SobreNos,
   Portfolio,
   Product,
-  ModalPortfolio,
 } from "@/components";
 
 export default function Home() {
   return (
     <>
-      {/* <Header />
+      <Header />
       <Hero />
-      <Product /> */}
-      {/* <Portfolio /> */}
+      <Product />
+      <Portfolio />
       <SobreNos />
-      {/* <Contact />
-      <Footer /> */}
+      <Contact />
+      <Footer />
     </>
   );
 }

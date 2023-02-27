@@ -1,12 +1,23 @@
 import styled from 'styled-components'
+import Image from 'next/image';
 
-export const StyledHero = styled.section`
+interface IStyledHeroProps {
+  image: string;
+}
+
+export const StyledHero = styled.section<IStyledHeroProps>`
   width: 100vw;
   height: 700px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 61.3%, rgba(0, 0, 0, 0.8) 100%), url(imgHero1.png);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 61.3%, rgba(0, 0, 0, 0.8) 100%), url(${(props)=> props.image});
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  @media (max-width: 500px) {
+    height: 450px;
+  }
 `
 
 export const Container = styled.a`
