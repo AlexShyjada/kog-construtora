@@ -1,8 +1,18 @@
+import { CaretLeft, CaretRight } from "phosphor-react";
 import { useState, useEffect } from "react";
-import { Container, StyledHero } from "./styles";
+import { ModalPortfolio } from "../Modal";
+import { portifolioMockedContent } from "../Portfolio/portifolioMockedContent";
+import {
+  Container,
+  Indicator,
+  StyledButton,
+  StyledHero,
+  StyledImageIndicator,
+} from "./styles";
 
 interface BannerContent {
   id: number;
+  positionOnMockedContent: number;
   title: string;
   description: string;
   img: {
@@ -13,7 +23,8 @@ interface BannerContent {
 
 const bannerContents: BannerContent[] = [
   {
-    id: 1,
+    id: 0,
+    positionOnMockedContent: 0,
     title: "Palazzo Anacapri",
     description: "Projeto: FRS Arquitetura",
     img: {
@@ -22,7 +33,8 @@ const bannerContents: BannerContent[] = [
     },
   },
   {
-    id: 2,
+    id: 1,
+    positionOnMockedContent: 1,
     title: "Forest Residence",
     description: "Projeto: Daniela Lopes",
     img: {
@@ -31,7 +43,8 @@ const bannerContents: BannerContent[] = [
     },
   },
   {
-    id: 3,
+    id: 2,
+    positionOnMockedContent: 2,
     title: "Mansão José Martins Catharino",
     description: "Projeto: Nathália Velame",
     img: {
@@ -41,10 +54,12 @@ const bannerContents: BannerContent[] = [
   },
 ];
 
-const BANNER_ROTATION_INTERVAL_MS = 10000;
+const BANNER_ROTATION_INTERVAL_MS = 5000;
 
 export function Hero() {
   const [currentBannerIndex, setCurrentBannerIndex] = useState<number>(0);
+  const [isModalActive, setIsModalActive] = useState(false);
+  const [modalContentSelected, setModalContentSelected] = useState(0);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -56,14 +71,72 @@ export function Hero() {
     return () => clearInterval(intervalId);
   }, []);
 
+  function handleBackPage() {
+    currentBannerIndex === 0
+      ? ""
+      : setCurrentBannerIndex(currentBannerIndex - 1);
+  }
+
+  function handleNextPage() {
+    currentBannerIndex === bannerContents.length - 1
+      ? ""
+      : setCurrentBannerIndex(currentBannerIndex + 1);
+  }
+
+  function handleModalOpen() {
+    setModalContentSelected(
+      bannerContents[currentBannerIndex].positionOnMockedContent
+    );
+    setIsModalActive(true);
+  }
+
   const { title, description, img } = bannerContents[currentBannerIndex];
 
   return (
-    <StyledHero id="Inicio" image={img.url}>
-      <Container>
-        <h2>{title}</h2>
-        <span>{description}</span>
-      </Container>
-    </StyledHero>
+    <>
+      {isModalActive && (
+        <ModalPortfolio
+          isModalActive={isModalActive}
+          setIsModalActive={setIsModalActive}
+          title={portifolioMockedContent[modalContentSelected].title}
+          description={
+            portifolioMockedContent[modalContentSelected].description
+          }
+          imgList={portifolioMockedContent[modalContentSelected].imgList}
+        />
+      )}
+      <StyledHero id="Inicio" image={img.url}>
+        <Container onClick={() => handleModalOpen()}>
+          <h2>{title}</h2>
+          <span>{description}</span>
+        </Container>
+      </StyledHero>
+      <StyledImageIndicator className="imageIndicatorContainer">
+        <StyledButton
+          isButtonActive={currentBannerIndex !== 0}
+          onClick={() => handleBackPage()}
+        >
+          <CaretLeft size={16} />
+        </StyledButton>
+        {bannerContents.map((item) => {
+          return (
+            <Indicator
+              key={item.id}
+              className="indicator"
+              onClick={() => setCurrentBannerIndex(item.id)}
+              isIndicatorActive={item.id === currentBannerIndex}
+            />
+          );
+        })}
+        <StyledButton
+          isButtonActive={
+            bannerContents.length - 1 != currentBannerIndex ? true : false
+          }
+          onClick={() => handleNextPage()}
+        >
+          <CaretRight size={16} />
+        </StyledButton>
+      </StyledImageIndicator>
+    </>
   );
 }
