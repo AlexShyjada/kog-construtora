@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Image from 'next/image';
 
 interface IStyledHeroProps {
   image: string;
@@ -7,13 +6,15 @@ interface IStyledHeroProps {
 
 export const StyledHero = styled.section<IStyledHeroProps>`
   width: 100vw;
-  height: 700px;
+  max-height: 550px;
+  height: 550px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 61.3%, rgba(0, 0, 0, 0.8) 100%), url(${(props)=> props.image});
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   
   @media (max-width: 500px) {
     height: 450px;
