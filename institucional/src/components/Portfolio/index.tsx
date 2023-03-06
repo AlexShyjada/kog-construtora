@@ -62,6 +62,8 @@ export function Portfolio() {
           </div>
         </header>
 
+        
+
         <div className="gridCardsPortfólios">
           {filteredPortfolio.map((card) => (
             <PortfolioCard
