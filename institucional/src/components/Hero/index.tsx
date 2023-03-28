@@ -16,6 +16,7 @@ interface BannerContent {
   title: string;
   description: string;
   img: {
+    id: number;
     alt: string;
     url: string;
   };
@@ -28,6 +29,7 @@ const bannerContents: BannerContent[] = [
     title: "Palazzo Anacapri",
     description: "Projeto: FRS Arquitetura",
     img: {
+      id: 0,
       alt: "Foto",
       url: "/portfolio/palazzo-anacapri/post1.jpg",
     },
@@ -38,6 +40,7 @@ const bannerContents: BannerContent[] = [
     title: "Forest Residence",
     description: "Projeto: Daniela Lopes",
     img: {
+      id: 1,
       alt: "Foto",
       url: "/portfolio/forest-residence/post1.jpg",
     },
@@ -48,6 +51,7 @@ const bannerContents: BannerContent[] = [
     title: "Mansão José Martins Catharino",
     description: "Projeto: Nathália Velame",
     img: {
+      id: 2,
       alt: "Foto",
       url: "/portfolio/mansao-jose-martins-catharino/post2.jpg",
     },
@@ -72,15 +76,19 @@ export function Hero() {
   }, []);
 
   function handleBackPage() {
-    currentBannerIndex === 0
-      ? ""
-      : setCurrentBannerIndex(currentBannerIndex - 1);
+    const FIRST_BANNER_INDEX = 0;
+    if (currentBannerIndex === FIRST_BANNER_INDEX) {
+      return;
+    }
+    setCurrentBannerIndex(currentBannerIndex - 1);
   }
 
   function handleNextPage() {
-    currentBannerIndex === bannerContents.length - 1
-      ? ""
-      : setCurrentBannerIndex(currentBannerIndex + 1);
+    const LAST_BANNER_INDEX = bannerContents.length - 1;
+    if (currentBannerIndex === LAST_BANNER_INDEX) {
+      return;
+    }
+    setCurrentBannerIndex(currentBannerIndex + 1);
   }
 
   function handleModalOpen() {
@@ -130,7 +138,7 @@ export function Hero() {
         })}
         <StyledButton
           isButtonActive={
-            bannerContents.length - 1 != currentBannerIndex ? true : false
+            bannerContents.length - 1 !== currentBannerIndex ? true : false
           }
           onClick={() => handleNextPage()}
         >

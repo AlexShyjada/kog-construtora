@@ -6,12 +6,12 @@ export const StyledProduct = styled.section`
   align-items: center;
   
   @media (max-width: 720px) {
-    padding: 24px 10px;
+    padding: 24px 0 0 0;
   }
   `;
 
 export const Container = styled.div`
-  padding: 65px 10px 0 10px;
+  padding: 65px 0 0 0;
   width: 100%;
   max-width: 1223px;
   display: flex;
@@ -20,6 +20,7 @@ export const Container = styled.div`
 
   @media (max-width: 940px) {
     gap: 24px;
+    padding: 24px 10px 0;
   }
 `;
 
@@ -50,13 +51,16 @@ export const StyledTitleContainer = styled.div`
 
   button {
     margin-bottom: 12px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 0 32px;
-    color: var(--base1);
-    background: var(--brandColor);
+    
+    a {
+      height: 48px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 32px;
+      color: var(--base1);
+      background: var(--brandColor);
+    }
 
     &:hover {
       background: "$brandColorHover";
@@ -131,10 +135,16 @@ export const StyledServicesContainer = styled.div`
 
 export const StyledCard = styled.div`
   display: flex;
+  justify-content: flex-start;
   flex-direction: column;
   padding: 24px;
   gap: 12px;
   background: var(--base3);
+
+  img {
+    width: fit-content;
+    height: 80px;
+  }
 
   h3.productTitle {
     font-weight: 700;

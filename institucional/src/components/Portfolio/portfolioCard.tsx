@@ -1,12 +1,12 @@
-import Image from "next/image";
 import { ModalPortfolio } from "../Modal";
 import { useState } from "react";
+import {Card} from './styles'
 
 interface IPortfolioCard {
   title: string;
   description: string;
   imgList: {
-    id: 1;
+    id: number;
     alt: string;
     url: string;
   }[];
@@ -17,8 +17,12 @@ export function PortfolioCard(props: IPortfolioCard) {
 
   const { title, description, imgList } = props;
 
+  function handleOpenModalPortfolio() {
+    setIsModalActive(true)
+  }
+
   return (
-    <div className="portifolioCard">
+    <>
       {isModalActive ? (
         <ModalPortfolio
           isModalActive={isModalActive}
@@ -30,17 +34,18 @@ export function PortfolioCard(props: IPortfolioCard) {
       ) : (
         ""
       )}
-      <figure className="figure">
-        <Image alt={title} src={imgList[0].url} fill />
-      </figure>
+    <Card onClick={()=> setIsModalActive(!isModalActive)}>
+
+      <img alt={title} src={imgList[0].url} />
 
       <div className="contentContainer">
         <div className="textContainer">
           <h3> {title} </h3>
           <p className="portfolioCardDescription">{description}</p>
         </div>
-        <a onClick={() => setIsModalActive(!isModalActive)}>Saiba mais</a>
+        <span onClick={handleOpenModalPortfolio}>Saiba mais</span>
       </div>
-    </div>
+    </Card>
+    </>
   );
 }

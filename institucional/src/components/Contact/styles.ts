@@ -47,6 +47,7 @@ export const StyledContact = styled.section`
 
       .card.whatsApp,
       .card.instagram {
+        text-decoration: none;
         display: none;
         opacity: 0;
         width: 0;
@@ -138,8 +139,8 @@ export const StyledContact = styled.section`
   }
 
   @media (max-width: 420px) {
-    padding: 24px 10px;
     .container {
+      padding: 24px 10px;
       .contactHeader {
         .titleContainer {
           h2.titleSecundary {
@@ -156,6 +157,7 @@ export const StyledContact = styled.section`
 `;
 
 export const StyledInstagram = styled.a`
+  text-decoration: none;
   display: flex;
   gap: 8px;
   align-items: center;
@@ -164,6 +166,7 @@ export const StyledInstagram = styled.a`
   border: 1px solid var(--brandColor);
 `;
 export const StyledWhatsapp = styled.a`
+  text-decoration: none;
   display: flex;
   gap: 8px;
   align-items: center;

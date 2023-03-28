@@ -9,13 +9,6 @@ export const StyledHeaderDesktop = styled.header`
   z-index: 999;
   position: fixed;
   inset: 0 0 auto 0;
-
-  @media (max-width: 900px) {
-    display: none;
-    width: 0;
-    height: 0;
-    opacity: 0;
-  }
 `;
 
 export const StyledContainer = styled.div`
@@ -26,9 +19,9 @@ export const StyledContainer = styled.div`
   align-items: center;
 
   @media (max-width: 900px) {
-    width: 100%;
-    display: flex;
-    align-items: center;
+    img {
+      max-height: 45px;
+    }
   }
 `;
 
@@ -131,6 +124,8 @@ export const StyledNavMobile = styled.nav<iStyledNavMobileProps>`
   @media (max-width: 900px) {
     display: flex;
     a {
+      display: flex;
+      justify-content: space-between;
       width: 100%;
       font-weight: 500;
       padding: 24px 10px;

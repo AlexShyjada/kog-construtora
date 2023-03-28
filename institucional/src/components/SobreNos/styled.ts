@@ -15,6 +15,10 @@ export const StyledSobreNos = styled.section`
     @media (max-width: 1200px) {
       flex-direction: row-reverse;
     }
+
+    @media (max-width: 940px) {
+      padding: 24px 10px 0;
+    }
     @media (max-width: 800px) {
       flex-direction: column-reverse;
     }
@@ -137,56 +141,52 @@ export const StyledSobreNos = styled.section`
       }
     }
 
-    .imageContainer {
-      position: relative;
-      min-width: 594px;
-      max-width: 594px;
-      height: 443px;
-
-      img {
-        object-fit: cover;
-      }
-      @media (max-width: 1200px) {
-        min-width: 440px;
-        max-width: 440px;
-        height: 290px;
-      }
-      
-      @media (max-width: 980px) {
-        min-width: 350px;
-        max-width: 300px;
-        height: 400px;
-      }
-
-      @media (max-width: 800px) {
-        width: 100%;
-        min-width: 100%;
-        max-height: 400px;
-        min-height: 400px;
-        img {
-          object-position: top;
-        }
-      }
-
-      @media (max-width: 600px) {
-        width: 100%;
-        min-width: 100%;
-        max-height: 350px;
-        min-height: 350px;
-      }
-
-      @media (max-width: 500px) {
-        width: 100%;
-        min-width: 100%;
-        max-height: 250px;
-        min-height: 250px;
-        img {
-          object-position: top;
-        }
-      }
-    }
-
     @media (max-width: 1223px) {
+    }
+  }
+`;
+
+export const Image = styled.img`
+  position: relative;
+  min-width: 594px;
+  max-width: 594px;
+  height: 443px;
+  object-fit: cover;
+
+  @media (max-width: 1200px) {
+    min-width: 440px;
+    max-width: 440px;
+    height: 290px;
+  }
+
+  @media (max-width: 980px) {
+    min-width: 350px;
+    max-width: 300px;
+    height: 400px;
+  }
+
+  @media (max-width: 800px) {
+    width: 100%;
+    min-width: 100%;
+    max-height: 400px;
+    min-height: 400px;
+    object-position: top;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    min-width: 100%;
+    max-height: 350px;
+    min-height: 350px;
+  }
+
+  @media (max-width: 500px) {
+    width: 100%;
+    min-width: 100%;
+    max-height: 250px;
+    min-height: 250px;
+    img {
+      object-position: top;
     }
   }
 `;

@@ -1,17 +1,13 @@
 import { useState, useEffect } from "react";
 
-export function useMobile() {
-  var inicialValue
-
-  if (typeof window !== "undefined") {
-    inicialValue = window.innerWidth;
-  }
-
-  const [width, setWidth] = useState(inicialValue);
-
+export const useMobile = () => {
+  const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    const handleWindowResize = () => setWidth(window.innerWidth);
+    const handleWindowResize = () => {
+      setWidth(window.innerWidth);
+    }
+
     window.addEventListener("resize", handleWindowResize);
     return () => window.removeEventListener("resize", handleWindowResize);
   }, []);

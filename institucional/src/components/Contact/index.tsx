@@ -22,32 +22,48 @@ export function Contact() {
             <h2 className="titleSecundary">Entre em contato</h2>
           </div>
           <div className="buttonContainer">
-            <StyledInstagram>
+            <StyledInstagram
+              href="https://www.instagram.com/kogconstrutora/"
+              target="_blank"
+              rel="noreferrer"
+            >
               Instagram <InstagramLogo size={16} />
             </StyledInstagram>
-            <StyledWhatsapp>
+            <StyledWhatsapp
+              href="https://wa.me/message/PJLOIID4S5UMO1"
+              target="_blank"
+              rel="noreferrer"
+            >
               Whatsapp <WhatsappLogo size={16} />
             </StyledWhatsapp>
           </div>
         </header>
 
         <div className="gridCards">
-          <div className="card whatsApp">
+          <a
+            className="card whatsApp"
+            href="https://wa.me/message/PJLOIID4S5UMO1"
+            target="_blank"
+            rel="noreferrer"
+          >
             <WhatsappLogo size={32} />
             <div className="cardTextContainer">
               <h3 className="tertiaryText">WhastsApp</h3>
               <span className="contactDescription">(071) 91234-1234</span>
             </div>
-          </div>
-          <div className="card instagram">
-          <InstagramLogo size={32} />
+          </a>
+          <a
+            className="card instagram"
+            href="https://www.instagram.com/kogconstrutora/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <InstagramLogo size={32} />
             <div className="cardTextContainer">
               <h3 className="tertiaryText">Instagram</h3>
-              <span className="contactDescription">
-                @kogconstrutora
-              </span>
+              <span className="contactDescription">@kogconstrutora</span>
             </div>
-          </div>
+          </a>
           <div className="card">
             <EnvelopeSimple size={32} />
             <div className="cardTextContainer">

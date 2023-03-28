@@ -1,7 +1,6 @@
-import Image from "next/image";
-import Link from "next/link";
 import { ArrowUpRight, List, X } from "phosphor-react";
 import { useState } from "react";
+import { useMobile } from "../utils/useMobile";
 import {
   StyledButton,
   StyledContainer,
@@ -14,97 +13,100 @@ import {
 export function Header() {
   const [isHeaderMobileActive, setIsHeaderMobileActive] = useState(false);
 
+  const { width } = useMobile();
+
   return (
     <>
-      <StyledHeaderDesktop id="Header">
-        <StyledContainer>
-          <Image
-            width={147}
-            height={60}
-            src="/logo-KOG.png"
-            alt="Logo KOG Construtora"
-          />
-          <StyledNav>
-            <Link href="#Inicio" legacyBehavior>
-              <a>Inicio</a>
-            </Link>
-            <Link href="#Servicos" legacyBehavior>
-              <a>Áreas de atuação</a>
-            </Link>
-            <Link href="#Portfolio" legacyBehavior>
-              <a>Portfólio</a>
-            </Link>
-            <Link href="#SobreNos" legacyBehavior>
-              <a>Sobre nós</a>
-            </Link>
-            <Link href="#Contato" legacyBehavior>
-              <a>Contato</a>
-            </Link>
-          </StyledNav>
+      {width >= 900 ? (
+        <StyledHeaderDesktop id="Header">
+          <StyledContainer>
+            <img src="/logo-KOG.png" alt="Logo KOG Construtora" />
+            <StyledNav>
+              <a href="#Inicio">Inicio</a>
+              <a href="#Servicos">Áreas de atuação</a>
+              <a href="#Portfolio">Portfólio</a>
+              <a href="#SobreNos">Sobre nós</a>
+              <a href="#Contato">Contato</a>
+            </StyledNav>
 
-          <StyledButton>
-            <Link href="#" legacyBehavior>
-              <a>
+            <StyledButton>
+              <a
+                href="http://www.obraprimaweb.com.br/PortalCliente/kog"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Área do cliente
                 <ArrowUpRight size={16} />
               </a>
-            </Link>
-          </StyledButton>
-        </StyledContainer>
-      </StyledHeaderDesktop>
-
-      <StyledHeaderMobile>
-        <StyledContainer>
-          <Image
-            width={98}
-            height={35}
-            src="/logo-KOG.png"
-            alt="Logo KOG Construtora"
-          />
-          {isHeaderMobileActive ? (
-            <button
+            </StyledButton>
+          </StyledContainer>
+        </StyledHeaderDesktop>
+      ) : (
+        <>
+          <StyledHeaderMobile>
+            <StyledContainer>
+              <img src="/logo-KOG.png" alt="Logo KOG Construtora" />
+              {isHeaderMobileActive ? (
+                <button
+                  onClick={() => setIsHeaderMobileActive(!isHeaderMobileActive)}
+                >
+                  <X size={24} />
+                </button>
+              ) : (
+                <button>
+                  <List
+                    size={24}
+                    onClick={() =>
+                      setIsHeaderMobileActive(!isHeaderMobileActive)
+                    }
+                  />
+                </button>
+              )}
+            </StyledContainer>
+          </StyledHeaderMobile>
+          <StyledNavMobile isHeaderMobileActive={isHeaderMobileActive}>
+            <a
               onClick={() => setIsHeaderMobileActive(!isHeaderMobileActive)}
+              href="#Inicio"
             >
-              <X size={24} />
-            </button>
-          ) : (
-            <button>
-              <List
-                size={24}
-                onClick={() => setIsHeaderMobileActive(!isHeaderMobileActive)}
-              />
-            </button>
-          )}
-        </StyledContainer>
-      </StyledHeaderMobile>
-      
-      <StyledNavMobile isHeaderMobileActive={isHeaderMobileActive}>
-        <Link href="#Inicio" legacyBehavior>
-          <a onClick={() => setIsHeaderMobileActive(!isHeaderMobileActive)}>
-            Inicio
-          </a>
-        </Link>
-        <Link href="#Servicos" legacyBehavior>
-          <a onClick={() => setIsHeaderMobileActive(!isHeaderMobileActive)}>
-            Áreas de atuação
-          </a>
-        </Link>
-        <Link href="#Portfolio" legacyBehavior>
-          <a onClick={() => setIsHeaderMobileActive(!isHeaderMobileActive)}>
-            Portfólio
-          </a>
-        </Link>
-        <Link href="#SobreNos" legacyBehavior>
-          <a onClick={() => setIsHeaderMobileActive(!isHeaderMobileActive)}>
-            Sobre nós
-          </a>
-        </Link>
-        <Link href="#Contato" legacyBehavior>
-          <a onClick={() => setIsHeaderMobileActive(!isHeaderMobileActive)}>
-            Contato
-          </a>
-        </Link>
-      </StyledNavMobile>
+              Inicio
+            </a>
+            <a
+              onClick={() => setIsHeaderMobileActive(!isHeaderMobileActive)}
+              href="#Servicos"
+            >
+              Áreas de atuação
+            </a>
+            <a
+              onClick={() => setIsHeaderMobileActive(!isHeaderMobileActive)}
+              href="#Portfolio"
+            >
+              Portfólio
+            </a>
+            <a
+              onClick={() => setIsHeaderMobileActive(!isHeaderMobileActive)}
+              href="#SobreNos"
+            >
+              Sobre nós
+            </a>
+            <a
+              onClick={() => setIsHeaderMobileActive(!isHeaderMobileActive)}
+              href="#Contato"
+            >
+              Contato
+            </a>
+            <a
+              onClick={() => setIsHeaderMobileActive(!isHeaderMobileActive)}
+              href="http://www.obraprimaweb.com.br/PortalCliente/kog"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Área do cliente
+              <ArrowUpRight size={16} />
+            </a>
+          </StyledNavMobile>
+        </>
+      )}
     </>
   );
 }

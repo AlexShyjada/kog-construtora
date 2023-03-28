@@ -1,8 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-const styled = { createGlobalStyle };
-
-export const GlobalStyles = styled.createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   :root {
     --brandColor: #08181b;
     --brandColorDark: #020B0D;
@@ -140,5 +138,44 @@ export const GlobalStyles = styled.createGlobalStyle`
   button {
     background: transparent;
     border: none;
+  }
+
+
+  .react-modal-overlay {
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .react-modal-content {
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 800px;
+    height: fit-content;
+    background: var(--base1);
+    padding: 32px;
+    overflow-y: scroll;
+  }
+  
+  @media(max-width: 900px){
+    .react-modal-overlay {
+      align-items: flex-start;
+    } 
+    
+    .react-modal-content {
+      padding: 24px;
+      width: 100%;
+      max-width: 95vw;
+      height: fit-content;
+      max-height: 95vh;
+    }
   }
 `;

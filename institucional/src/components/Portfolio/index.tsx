@@ -62,18 +62,23 @@ export function Portfolio() {
           </div>
         </header>
 
-        
-
-        <div className="gridCardsPortfólios">
-          {filteredPortfolio.map((card) => (
-            <PortfolioCard
-              title={card.title}
-              key={card.id}
-              description={card.description}
-              imgList={card.imgList}
-            />
-          ))}
-        </div>
+        {filteredPortfolio.length === 0 ? (
+          <div className="contentNotFound">
+            Ainda não cadastramos projetos desse tipo, fique atento a novidades
+            ;)
+          </div>
+        ) : (
+          <div className="gridCardsPortfólios">
+            {filteredPortfolio.map((card) => (
+              <PortfolioCard
+                title={card.title}
+                key={card.id}
+                description={card.description}
+                imgList={card.imgList}
+              />
+            ))}
+          </div>
+        )}
       </Container>
     </StyledPortfolio>
   );

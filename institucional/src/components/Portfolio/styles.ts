@@ -95,78 +95,100 @@ export const StyledPortfolio = styled.section`
     }
   }
 
+  .contentNotFound {
+    height: 60px;
+    background: var(--base3);
+    border-radius: 16px;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
   .gridCardsPortfólios {
     display: grid;
     gap: 24px;
     grid-template-columns: repeat(2, 1fr);
 
-    .portifolioCard {
+    @media (max-width: 720px) {
+      grid-template-columns: 1fr;
+    }
+  }
+`;
+
+export const Card = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 20px 32px 20px;
+  border: solid 1px var(--border);
+  gap: 24px;
+  
+  &:hover {
+    cursor: pointer;
+    border: solid 1px var(--brandColor);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    max-height: 330px;
+    object-fit: cover;
+
+    background-position: center;
+    @media (max-width: 600px) {
+      height: 280px;
+    }
+
+    @media (max-width: 460px) {
+      max-height: 240px;
+
+    }
+  }
+
+  .contentContainer {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+
+    .textContainer {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: flex-start;
       padding: 0px;
-      gap: 24px;
+      gap: 8px;
 
-      .figure {
-        position: relative;
-        width: 100%;
-        height: 330px;
-        img {
-          object-fit: cover;
-        }
-
-        @media (max-width: 600px) {
-          height: 280px;
-        }
+      h3 {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 36px;
+        color: var(--brandColor);
       }
 
-      .contentContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0px;
-        gap: 24px;
-
-        .textContainer {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          padding: 0px;
-          gap: 8px;
-
-          h3 {
-            font-weight: 700;
-            font-size: 24px;
-            line-height: 29px;
-            color: var(--brandColor);
-          }
-
-          .portfolioCardDescription {
-            height: 32px;
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 32px;
-            letter-spacing: 0.15px;
-            color: var(--brandColor);
-            opacity: 0.7;
-          }
-        }
-
-        a {
-          cursor: pointer;
-          font-weight: 700;
-          font-size: 16px;
-          line-height: 20px;
-          letter-spacing: 0.2px;
-          text-decoration-line: underline;
-          text-transform: uppercase;
-        }
+      .portfolioCardDescription {
+        height: 32px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 32px;
+        letter-spacing: 0.15px;
+        color: var(--brandColor);
+        opacity: 0.7;
       }
     }
 
-    @media (max-width: 720px) {
-      grid-template-columns: 1fr;
+    span {
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.2px;
+      text-decoration-line: underline;
+      text-transform: uppercase;
     }
   }
 `;
@@ -178,6 +200,11 @@ export const Container = styled.div`
   max-width: 1223px;
   padding: 65px 10px 0 10px;
   gap: 40px;
+
+  @media (max-width: 940px) {
+    gap: 24px;
+    padding: 24px 10px 0;
+  }
 `;
 
 interface IStyledButton {
@@ -198,7 +225,7 @@ export const StyledButton = styled.button<IStyledButton>`
     props.isDisabled
       ? css`
           opacity: 0.3;
-          `
+        `
       : css`
           opacity: 1;
         `}

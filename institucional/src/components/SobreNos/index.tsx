@@ -1,7 +1,5 @@
-import Image from "next/image";
 import { InstagramLogo, LinkedinLogo } from "phosphor-react";
-import React from "react";
-import { StyledSobreNos } from "./styled";
+import { Image, StyledSobreNos } from "./styled";
 
 export function SobreNos() {
   return (
@@ -31,25 +29,31 @@ export function SobreNos() {
 
           <div className="buttonContainer">
             <button>
-              <a href="#" className="linkedin">
+              <a
+                href="https://www.linkedin.com/company/kog-construtora/"
+                target="_blank"
+                className="linkedin"
+                rel="noreferrer"
+              >
                 Linkedin <LinkedinLogo size={20} />
               </a>
             </button>
             <button>
-              <a href="#" className="instagram">
+              <a
+                href="https://www.instagram.com/kogconstrutora/"
+                target="_blank"
+                rel="noreferrer"
+                className="instagram"
+              >
                 Instagram <InstagramLogo size={20} />
               </a>
             </button>
           </div>
-
         </div>
-        <figure className="imageContainer">
-          <Image
-            src="/imgSobreNos.png"
-            fill
-            alt="Imagem descritiva Sobre a empresa"
-          />
-        </figure>
+        <Image
+          src="/imgSobreNos.png"
+          alt="Imagem descritiva Sobre a empresa"
+        />
       </div>
     </StyledSobreNos>
   );

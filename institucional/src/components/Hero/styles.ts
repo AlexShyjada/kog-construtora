@@ -71,19 +71,23 @@ export const Indicator = styled.span<IStyledIndicatorProps>`
 export const Container = styled.a`
   width: 100%;
   max-width: 1223px;
-  padding: 20px 0;
+  padding: 20px 12px;
   display: flex;
   flex-direction: column;
   gap: 8px;
   color: var(--base1);
   cursor: pointer;
-
-  h2 {
-    font-weight: 700;
-    font-size: 34px;
-    line-height: 41px;
-    letter-spacing: 0.25px;
+  @media (max-width: 720px) {
+    gap: 4px;
+    h2 {
+      font-size: 28px;
+      line-height: 32px;
+    }
+    span{
+      font-size: 16px;
+    }
   }
+
 
   span {
     transition: 0.3s;
